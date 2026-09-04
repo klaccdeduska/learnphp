@@ -1,28 +1,18 @@
 <?php
-$test = 10;
-$test = 10 + 10;
-$test = 10 - 10;
-$test = 10 * 10;
-$test = 10 / 10;
-$test = 5 % 2;
-$test = 2 ** 3; // 2 * 2 * 2
-$test += 2;
-$test -= 2;
-$test *= 2;
-$test /= 2;
-$test %= 2;
-$test **= 2;
-$test++;
-$test--;
---$test;
-++$test;
-
-$a = 1;
-$b = ++$a;
-
-var_dump($b, $a);
-
-$test = 10;
-$test = sin($test);
+$test = "Hello";
+$test = "Hello" . "World" . "!";
+$test = $test . "!!!!!";
+$test .= "!!!!!";
+$name = "miha";
+$age = 18;
+$test = $name . " is " . $age . " years old";
+$test = "$name is $age years old";
+$test = "hello\n\nworld";
+$test = <<<END
+cool kakashki here
+OMG
+END;
 var_dump($test);
+var_dump($name);
+var_dump($age);
 ?>
