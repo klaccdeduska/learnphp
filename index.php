@@ -1,14 +1,28 @@
 <?php
 $test = 10;
-$test = 3.1;
-$test = "Meow";
-$test = "Õpilane";
-$test = "kakashki";
-$test = true;
-$test = false;
-$test = null;
-$test = [1, true, "poop"];
-$test = new stdClass();
-$test->name = "Miha";
+$test = 10 + 10;
+$test = 10 - 10;
+$test = 10 * 10;
+$test = 10 / 10;
+$test = 5 % 2;
+$test = 2 ** 3; // 2 * 2 * 2
+$test += 2;
+$test -= 2;
+$test *= 2;
+$test /= 2;
+$test %= 2;
+$test **= 2;
+$test++;
+$test--;
+--$test;
+++$test;
+
+$a = 1;
+$b = ++$a;
+
+var_dump($b, $a);
+
+$test = 10;
+$test = sin($test);
 var_dump($test);
 ?>
