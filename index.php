@@ -1,18 +1,22 @@
 <?php
-$test = "Hello";
-$test = "Hello" . "World" . "!";
-$test = $test . "!!!!!";
-$test .= "!!!!!";
-$name = "miha";
-$age = 18;
-$test = $name . " is " . $age . " years old";
-$test = "$name is $age years old";
-$test = "hello\n\nworld";
-$test = <<<END
-cool kakashki here
-OMG
-END;
+$number = array(1, 2, 3);
+$number = [1, 2, 3];
+var_dump($number[1]);
+$number[2] = 5;
+var_dump($number);
+$test = [1, 'dodik', true, [1, 2, 3]];
 var_dump($test);
-var_dump($name);
-var_dump($age);
+var_dump($test[3][1]);
+ 
+$test = [
+    'name' => 'kakaske',
+    'age' => 67,
+    'city' => 'Mardu',
+    1,
+    2,
+    3,
+    'color' => 'green',
+];
+var_dump($test);
+var_dump($test['name']);
 ?>
