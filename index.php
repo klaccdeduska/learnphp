@@ -1,57 +1,18 @@
 <?php
-$num = 10;
-if($num > 5) {
-    var_dump('Bigger');
-} else if ($num < 5) {
-    var_dump('Smaller');
-} else {
-    var_dump('Equal');
+for($index = 0; $index < 10; $index++) {
+    var_dump($index);
 }
-$day = (int)date('w');
-var_dump($day);
- 
-if ($day === 0) {
-    var_dump('Sunday');
-} else if ($day === 1) {
-    var_dump('Monday');
-} else if ($day === 2) {
-    var_dump('Tuesday');
+for($index = 9; $index >= 0; $index--) {
+    var_dump($index);
 }
-  else if ($day === 3) {
-    var_dump('Wednesday');
-} else if ($day === 4) {
-    var_dump('Thursday');
-} else if ($day === 5) {
-    var_dump('Friday');
-} else if ($day === 6) {
-    var_dump('Saturday');
-} else if ($day === 7) {
-    var_dump('Weirdday');
+for($index = 1; $index < 1000000; $index*=2) {
+    var_dump($index);
 }
- 
-switch ($day) {
-    case 0:
-        var_dump('Sunday');
-        break;
-    case 1:
-        var_dump('Monday');
-        break;
-    default:
-        var_dump('Tuesday');
-    case 3:
-        var_dump('Wednesday');
-        break;
-    case 4:
-        var_dump('Thursday');
-        break;
-    case 5:
-        var_dump('Friday');
-        break;
-    case 6:
-        var_dump('Saturday');
-        break;
-    case 7:
-        var_dump('Weirdday');
-        break;
+
+$time = time();
+$count = 0;
+while($time+1 > time()) {
+    $count++;
 }
+var_dump($count);
 ?>
