@@ -10,19 +10,17 @@ class box {
     }
 }
 
+$num1 = 1;
+$num2 = $num1;
+$num1 = 2;
+var_dump($num1, $num2);
+
 $box1 = new box();
 $box1->width = 1;
-$box1->height = 2;
-$box1->legnth = 3;
-var_dump($box1);
-var_dump($box1->volume());
+$box2 = clone $box1;
+$box2->width = $box1->width;
+$box1->width = 2;
 
-$box2 = new box();
-$box2->width = 4;
-$box2->height = 5;
-$box2->legnth = 6;
-var_dump($box2);
-var_dump($box2->volume());
-var_dump($box1->volume());
+var_dump($box1, $box2);
 
 ?>
