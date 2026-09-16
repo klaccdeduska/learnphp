@@ -15,4 +15,34 @@ while($time+1 > time()) {
     $count++;
 }
 var_dump($count);
+
+while(false) {
+    var_dump('While');
+}
+
+do {
+    var_dump('Do');
+} while(false);
+
+$fruits = ['apple', 'banana', 'cherry'];
+
+for($index = 0; $index < count($fruits); $index++) {
+    $fruit = $fruits[$index];
+    var_dump($fruits[$index]);
+}
+foreach($fruits as $fruit) {
+    var_dump($fruit);
+}
+foreach($fruits as $key => $fruit) {
+    var_dump($key, $fruit);
+}
+
+function recursive($index) {
+    var_dump($index);
+    if($index < 10) {
+        recursive($index+1);
+    }
+}
+
+recursive(0);
 ?>
