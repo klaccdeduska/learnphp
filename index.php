@@ -3,24 +3,20 @@
 class box {
     public $width;
     public $height;
-    public $legnth;
+    public $length;
 
     public function volume() {
-        return $this->width * $this->height * $this->legnth;
+        return $this->width * $this->height * $this->length;
     }
 }
 
-$num1 = 1;
-$num2 = $num1;
-$num1 = 2;
-var_dump($num1, $num2);
+class MetalBox extends box {
+    public $weightPerUnit;
+    public function mass() {
+        return $this->weightPerUnit * $this->volume();
+    }
+}
 
-$box1 = new box();
-$box1->width = 1;
-$box2 = clone $box1;
-$box2->width = $box1->width;
-$box1->width = 2;
-
-var_dump($box1, $box2);
-
+$metall = new MetalBox();
+var_dump($metall);
 ?>
