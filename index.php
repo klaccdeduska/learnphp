@@ -1,6 +1,7 @@
 <?php
 
 class box {
+    use HasColor, HasSmell;
     public $width;
     public $height;
     public $length;
@@ -27,6 +28,7 @@ class box {
 }
 
 class MetalBox extends box {
+    use HasColor;
     public $weightPerUnit;
     public function mass() {
         return $this->weightPerUnit * $this->volume();
@@ -34,6 +36,20 @@ class MetalBox extends box {
         public function test2() {
         $this->height = 10;
         var_dump($this->height);
+    }
+}
+
+trait HasColor {
+    public $color;
+    public function setColor(string $color) {
+        $this->color = $color;
+    }
+}
+
+trait HasSmell {
+    public $smell;
+    public function setSmell(string $smell) {
+        $this->smell = $smell;
     }
 }
 
