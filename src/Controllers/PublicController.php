@@ -97,4 +97,12 @@ class PublicController {
 
         view('tech', compact('posts'));
     }
+    
+    public function forms() {
+        view('forms');
+    }
+
+    public function answer() {
+        dump($_GET, $_POST);
+    }
 }
