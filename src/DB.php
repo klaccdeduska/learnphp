@@ -48,21 +48,19 @@ class DB
     {
         $fieldNames = array_keys($fields);
         $fieldNamesText = implode(', ', $fieldNames);
-        $fieldValuesText = implode("', '", $fields);
+        $fieldValuesText = implode(', ', array_fill(0, count($fields), '?'));
         $sql = "INSERT INTO $table ($fieldNamesText)
-                VALUES ('$fieldValuesText')";
-        $this->conn->exec($sql);
+                VALUES ($fieldValuesText)";
+        $statement = $this->conn->prepare($sql);
+        $statement->execute(array_values($fields));
     }
 
     public function update($table, $fields, $id)
     {
-        $updateValuesText = '';
-        foreach ($fields as $name => $value) {
-            $updateValuesText .= "$name='$value', ";
-        }
-        $updateValuesText = substr($updateValuesText, 0, -2);
-        $sql = "UPDATE $table SET $updateValuesText WHERE id = $id";
-        $this->conn->exec($sql);
+        $updateValuesText = implode(', ', array_map(fn ($name) => "$name = ?", array_keys($fields)));
+        $sql = "UPDATE $table SET $updateValuesText WHERE id = ?";
+        $statement = $this->conn->prepare($sql);
+        $statement->execute([...array_values($fields), $id]);
     }
 
     public function delete($table, $id)
